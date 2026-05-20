@@ -1,0 +1,109 @@
+# ══════════════════════════════════════════════════════════
+#  SENTINEL GRID — NETLIFY CONFIGURATION
+#  Security headers, redirects, and access rules
+# ══════════════════════════════════════════════════════════
+
+# ── GLOBAL SECURITY HEADERS ────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), accelerometer=(), gyroscope=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://qqgsrcjzwkugrbwanrfg.supabase.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://qqgsrcjzwkugrbwanrfg.supabase.co https://query1.finance.yahoo.com wss://qqgsrcjzwkugrbwanrfg.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-site"
+
+# ── STATIC ASSET CACHING ───────────────────────────────────
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── YAHOO FINANCE PROXY ────────────────────────────────────
+[[redirects]]
+  from = "/yahoo/:symbol"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/:symbol.NS?interval=1m&range=1d"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/yahoo-index/:symbol"
+  to = "https://query1.finance.yahoo.com/v8/finance/chart/:symbol?interval=1m&range=1d"
+  status = 200
+  force = true
+
+# ── FRIENDLY URL REDIRECTS ─────────────────────────────────
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/press"
+  to = "/press.html"
+  status = 200
+
+[[redirects]]
+  from = "/support"
+  to = "/support.html"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/login.html"
+  status = 200
+
+# ── BLOCK COMMON ATTACK PATHS ──────────────────────────────
+[[redirects]]
+  from = "/.env"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/phpinfo.php"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.sql"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.bak"
+  to = "/index.html"
+  status = 404
+  force = true

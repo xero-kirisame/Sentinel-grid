@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog — Sentinel Grid</title>
+<meta name="description" content="Insights, trading strategies, and market education from the Sentinel Grid team.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--accent:#f5a623;--accent2:#d4860a;--accent-bg:rgba(245,166,35,.1);--bg:#f4f2ee;--card:#ffffff;--border:rgba(160,130,60,.16);--text:#1a1408;--text2:#5a4e35;--text3:#9a8e72;--nav-bg:rgba(244,242,238,.92);--shadow:0 4px 24px rgba(120,90,20,.08);}
+[data-theme="dark"]{--bg:#0f0e0c;--card:#1e1b14;--border:rgba(160,130,60,.14);--text:#f0ead8;--text2:#b0a07a;--text3:#635a42;--nav-bg:rgba(15,14,12,.94);--shadow:0 4px 24px rgba(0,0,0,.4);}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.brand-icon{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#f5a623,#d4860a);display:flex;align-items:center;justify-content:center;}
+.brand-icon svg{width:17px;height:17px;fill:white;}
+.brand-name{font-size:16px;font-weight:700;color:var(--text);}.brand-name span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:6px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:20px;transition:all .15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent2);background:var(--accent-bg);}
+.theme-btn{width:32px;height:32px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .15s;margin-left:4px;}
+.theme-btn:hover{transform:scale(1.1);}
+
+.hero{padding:56px 24px 44px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(245,166,35,.12),transparent 65%);}
+.hero-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent2);background:var(--accent-bg);border:1px solid rgba(245,166,35,.25);border-radius:20px;padding:4px 14px;margin-bottom:14px;font-family:'DM Mono',monospace;}
+.hero h1{font-size:38px;font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:-.5px;}
+.hero p{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto;line-height:1.6;}
+
+.page-wrap{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+
+/* FEATURED */
+.featured{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:36px;}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s;}
+.feat-card:hover{transform:translateY(-3px);}
+.feat-img{height:200px;background:linear-gradient(135deg,#1a1408,#3a2a0a);display:flex;align-items:center;justify-content:center;font-size:52px;}
+.feat-img.blue{background:linear-gradient(135deg,#0a1a30,#0a2a4a);}
+.feat-body{padding:20px;}
+.post-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 9px;border-radius:20px;background:var(--accent-bg);color:var(--accent2);margin-bottom:8px;font-family:'DM Mono',monospace;}
+.post-tag.green{background:rgba(45,184,122,.1);color:#1e9e63;}
+.post-tag.blue{background:rgba(78,142,240,.1);color:#2a6fd4;}
+.feat-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.35;}
+.feat-title.sm{font-size:15px;}
+.feat-excerpt{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:10px;}
+.post-meta{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;}
+
+/* GRID */
+.section-title{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--text3);margin-bottom:16px;font-family:'DM Mono',monospace;}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-bottom:36px;}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s;}
+.blog-card:hover{transform:translateY(-2px);}
+.blog-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:38px;}
+.bg-amber{background:linear-gradient(135deg,#2a1a00,#4a2e00);}
+.bg-green{background:linear-gradient(135deg,#001a0a,#002a14);}
+.bg-blue{background:linear-gradient(135deg,#000a1a,#001028);}
+.bg-purple{background:linear-gradient(135deg,#0a001a,#14002a);}
+.blog-body{padding:16px;}
+.blog-title{font-size:14px;font-weight:700;color:var(--text);margin:6px 0 5px;line-height:1.4;}
+.blog-excerpt{font-size:12px;color:var(--text2);line-height:1.55;}
+
+/* NEWSLETTER */
+.newsletter{background:linear-gradient(135deg,var(--accent-bg),transparent);border:1px solid rgba(245,166,35,.25);border-radius:16px;padding:32px;text-align:center;margin-top:8px;}
+.newsletter h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.newsletter p{font-size:14px;color:var(--text2);margin-bottom:18px;}
+.nl-form{display:flex;gap:10px;max-width:400px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+.nl-input{flex:1;min-width:200px;padding:12px 16px;border-radius:10px;border:1.5px solid var(--border);background:var(--card);font-size:14px;color:var(--text);outline:none;font-family:'DM Sans',sans-serif;}
+.nl-input:focus{border-color:var(--accent);}
+.nl-btn{padding:12px 22px;border-radius:10px;background:linear-gradient(135deg,#f5a623,#d4860a);color:white;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
+
+footer{background:var(--card);border-top:1px solid var(--border);padding:28px 24px;text-align:center;}
+.footer-links{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.footer-links a{font-size:12px;color:var(--text2);text-decoration:none;padding:4px 10px;border-radius:20px;transition:all .15s;}
+.footer-links a:hover{color:var(--accent2);background:var(--accent-bg);}
+.footer-copy{font-size:11px;color:var(--text3);}
+
+@media(max-width:640px){.featured{grid-template-columns:1fr;}.hero h1{font-size:26px;}.nav-links a:not(.theme-btn){display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="brand-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div>
+    <div class="brand-name">Sentinel<span>Grid</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="press.html">Press</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">INSIGHTS & EDUCATION</div>
+  <h1>The Sentinel Grid Blog</h1>
+  <p>Trading strategies, market education, product updates, and insights from the team.</p>
+</div>
+
+<div class="page-wrap">
+  <div class="section-title">FEATURED ARTICLES</div>
+  <div class="featured">
+    <div class="feat-card">
+      <div class="feat-img">📈</div>
+      <div class="feat-body">
+        <span class="post-tag">STRATEGY</span>
+        <div class="feat-title">Understanding NIFTY 50: How India's Benchmark Index Really Works</div>
+        <div class="feat-excerpt">The NIFTY 50 is more than just a number on a screen. We break down its methodology, why it moves the way it does, and what it means for your portfolio.</div>
+        <div class="post-meta">Apr 2, 2026 · 8 min read</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="feat-card">
+        <div class="feat-body">
+          <span class="post-tag green">BEGINNER</span>
+          <div class="feat-title feat-title sm">Your First Virtual Trade: A Step-by-Step Guide</div>
+          <div class="post-meta">Mar 28, 2026 · 5 min read</div>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-body">
+          <span class="post-tag blue">MARKETS</span>
+          <div class="feat-title feat-title sm">Why FII Flows Matter More Than Most Retail Investors Realise</div>
+          <div class="post-meta">Mar 20, 2026 · 6 min read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">LATEST POSTS</div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-img bg-amber">💡</div>
+      <div class="blog-body">
+        <span class="post-tag">STRATEGY</span>
+        <div class="blog-title">Limit Orders vs Market Orders: When to Use Which</div>
+        <div class="blog-excerpt">The order type you choose can have a bigger impact on your returns than the stock you pick. Here's what every new trader needs to know.</div>
+        <div class="post-meta" style="margin-top:8px;">Mar 14, 2026 · 4 min read</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img bg-green">📊</div>
+      <div class="blog-body">
+        <span class="post-tag green">ANALYSIS</span>
+        <div class="blog-title">Reading a P&L Statement: The Basics Every Investor Needs</div>
+        <div class="blog-excerpt">Companies report profits and losses every quarter. Understanding those reports is the foundation of fundamental investing.</div>
+        <div class="post-meta" style="margin-top:8px;">Mar 8, 2026 · 7 min read</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img bg-blue">🏦</div>
+      <div class="blog-body">
+        <span class="post-tag blue">MARKETS</span>
+        <div class="blog-title">RBI Policy Decisions and Their Impact on Banking Stocks</div>
+        <div class="blog-excerpt">Every time the Reserve Bank of India moves the repo rate, bank stocks react. We explain the relationship and how to position accordingly.</div>
+        <div class="post-meta" style="margin-top:8px;">Feb 28, 2026 · 6 min read</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img bg-purple">🔍</div>
+      <div class="blog-body">
+        <span class="post-tag">EDUCATION</span>
+        <div class="blog-title">Sector Rotation: Riding the Market Cycle Intelligently</div>
+        <div class="blog-excerpt">Different sectors outperform at different points in the economic cycle. Learning to rotate is one of the most powerful skills in investing.</div>
+        <div class="post-meta" style="margin-top:8px;">Feb 18, 2026 · 5 min read</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img bg-amber">⚡</div>
+      <div class="blog-body">
+        <span class="post-tag green">PRODUCT</span>
+        <div class="blog-title">New: Dark Mode, Performance Updates & Security Hardening</div>
+        <div class="blog-excerpt">Sentinel Grid just got a major upgrade. New amber design identity, system-wide dark mode, GDPR compliance, and blazing fast UI.</div>
+        <div class="post-meta" style="margin-top:8px;">Apr 9, 2026 · 3 min read</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img bg-green">📱</div>
+      <div class="blog-body">
+        <span class="post-tag">BEGINNER</span>
+        <div class="blog-title">5 Mistakes Every New Stock Market Investor Makes (and How to Avoid Them)</div>
+        <div class="blog-excerpt">From panic selling to ignoring diversification — we've seen it all in the sim. Learn from others' virtual mistakes before risking real money.</div>
+        <div class="post-meta" style="margin-top:8px;">Feb 5, 2026 · 6 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <h3>Stay in the know 📬</h3>
+    <p>Get new articles, market insights, and Sentinel Grid updates in your inbox — no spam, ever.</p>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="your@email.com">
+      <button class="nl-btn">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a>
+    <a href="press.html">Media & Press</a><a href="support.html">Help & Support</a><a href="privacy.html">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">© 2026 Sentinel Grid. All rights reserved. · Virtual trading simulation — not real financial advice.</div>
+</footer>
+<script>
+function toggleTheme(){const isDark=document.documentElement.getAttribute('data-theme')==='dark';const t=isDark?'light':'dark';document.documentElement.setAttribute('data-theme',t);localStorage.setItem('sg-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'☀️':'🌙';}
+(()=>{const saved=localStorage.getItem('sg-theme')||'light';document.documentElement.setAttribute('data-theme',saved);document.getElementById('theme-btn').textContent=saved==='dark'?'☀️':'🌙';})();
+</script>
+</body>
+</html>

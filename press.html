@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Media & Press — Sentinel Grid</title>
+<meta name="description" content="Press resources, media kit, brand assets, and press contact for Sentinel Grid.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--accent:#f5a623;--accent2:#d4860a;--accent-bg:rgba(245,166,35,.1);--bg:#f4f2ee;--card:#ffffff;--border:rgba(160,130,60,.16);--text:#1a1408;--text2:#5a4e35;--text3:#9a8e72;--nav-bg:rgba(244,242,238,.92);--shadow:0 4px 24px rgba(120,90,20,.08);}
+[data-theme="dark"]{--bg:#0f0e0c;--card:#1e1b14;--border:rgba(160,130,60,.14);--text:#f0ead8;--text2:#b0a07a;--text3:#635a42;--nav-bg:rgba(15,14,12,.94);--shadow:0 4px 24px rgba(0,0,0,.4);}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.brand-icon{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#f5a623,#d4860a);display:flex;align-items:center;justify-content:center;}
+.brand-icon svg{width:17px;height:17px;fill:white;}
+.brand-name{font-size:16px;font-weight:700;color:var(--text);}.brand-name span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:6px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:20px;transition:all .15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent2);background:var(--accent-bg);}
+.theme-btn{width:32px;height:32px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .15s;margin-left:4px;}
+
+.hero{padding:60px 24px 48px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(245,166,35,.12),transparent 65%);}
+.hero-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent2);background:var(--accent-bg);border:1px solid rgba(245,166,35,.25);border-radius:20px;padding:4px 14px;margin-bottom:14px;font-family:'DM Mono',monospace;}
+.hero h1{font-size:38px;font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:-.5px;}
+.hero p{font-size:16px;color:var(--text2);max-width:540px;margin:0 auto;line-height:1.6;}
+
+.page-wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;}
+.section{margin-bottom:52px;}
+.section-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--accent2);background:var(--accent-bg);border-radius:20px;padding:3px 10px;margin-bottom:10px;font-family:'DM Mono',monospace;}
+.section h2{font-size:26px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:-.4px;}
+.section p{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:10px;}
+
+/* BRAND ASSETS */
+.asset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:18px;}
+.asset-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
+.asset-preview{height:110px;display:flex;align-items:center;justify-content:center;}
+.asset-preview.dark-bg{background:#1a1408;}
+.asset-preview.light-bg{background:#f4f2ee;border-bottom:1px solid var(--border);}
+.asset-preview.amber-bg{background:linear-gradient(135deg,#f5a623,#d4860a);}
+.asset-info{padding:12px;}
+.asset-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.asset-type{font-size:10px;color:var(--text3);font-family:'DM Mono',monospace;}
+.asset-dl{display:inline-block;margin-top:8px;font-size:11px;font-weight:600;color:var(--accent2);text-decoration:none;padding:4px 10px;border-radius:20px;background:var(--accent-bg);border:1px solid rgba(245,166,35,.2);}
+.logo-preview{display:flex;align-items:center;gap:7px;}
+.lp-icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#f5a623,#d4860a);display:flex;align-items:center;justify-content:center;}
+.lp-icon svg{width:15px;height:15px;fill:white;}
+.lp-name{font-size:14px;font-weight:700;}
+
+/* COLORS */
+.color-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+.color-chip{border-radius:10px;overflow:hidden;border:1px solid var(--border);min-width:140px;}
+.chip-swatch{height:60px;}
+.chip-info{padding:10px 12px;background:var(--card);}
+.chip-name{font-size:12px;font-weight:700;color:var(--text);}
+.chip-hex{font-size:10px;color:var(--text3);font-family:'DM Mono',monospace;margin-top:2px;}
+
+/* PRESS RELEASES */
+.pr-list{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
+.pr-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;box-shadow:var(--shadow);}
+.pr-date{font-size:10px;color:var(--text3);font-family:'DM Mono',monospace;margin-bottom:5px;}
+.pr-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.4;}
+.pr-desc{font-size:12px;color:var(--text2);line-height:1.5;}
+.pr-badge{flex-shrink:0;font-size:9px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;background:var(--accent-bg);color:var(--accent2);font-family:'DM Mono',monospace;white-space:nowrap;}
+
+/* CONTACT */
+.contact-box{background:linear-gradient(135deg,var(--accent-bg),transparent);border:1px solid rgba(245,166,35,.25);border-radius:16px;padding:32px;text-align:center;}
+.contact-box h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.contact-box p{font-size:14px;color:var(--text2);margin-bottom:18px;line-height:1.6;}
+.contact-email{display:inline-block;font-size:15px;font-weight:700;color:var(--accent2);text-decoration:none;padding:12px 24px;border-radius:12px;background:var(--card);border:1.5px solid rgba(245,166,35,.3);}
+.contact-email:hover{border-color:var(--accent);}
+
+/* BOILERPLATE */
+.boilerplate{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-top:18px;}
+.boilerplate p{font-size:13px;color:var(--text2);line-height:1.7;font-style:italic;}
+
+footer{background:var(--card);border-top:1px solid var(--border);padding:28px 24px;text-align:center;}
+.footer-links{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.footer-links a{font-size:12px;color:var(--text2);text-decoration:none;padding:4px 10px;border-radius:20px;transition:all .15s;}
+.footer-links a:hover{color:var(--accent2);background:var(--accent-bg);}
+.footer-copy{font-size:11px;color:var(--text3);}
+
+@media(max-width:640px){.hero h1{font-size:26px;}.pr-card{flex-direction:column;}.nav-links a:not(.theme-btn){display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="brand-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div>
+    <div class="brand-name">Sentinel<span>Grid</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a><a href="blog.html">Blog</a>
+    <a href="press.html" class="active">Press</a><a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">MEDIA & PRESS</div>
+  <h1>Press Resources</h1>
+  <p>Brand assets, press releases, and everything journalists and creators need to write about Sentinel Grid.</p>
+</div>
+
+<div class="page-wrap">
+
+  <div class="section">
+    <div class="section-badge">BRAND ASSETS</div>
+    <h2>Logo & Visual Identity</h2>
+    <p>Please use the approved logos and colors below. Do not modify, stretch, recolor, or add effects to our logo without prior written approval.</p>
+    <div class="asset-grid">
+      <div class="asset-card">
+        <div class="asset-preview dark-bg">
+          <div class="logo-preview"><div class="lp-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div><span class="lp-name" style="color:#f0ead8;font-family:'DM Sans',sans-serif;">Sentinel<span style="color:#f5a623;">Grid</span></span></div>
+        </div>
+        <div class="asset-info"><div class="asset-name">Logo — Dark</div><div class="asset-type">PNG / SVG</div><a class="asset-dl" href="#" onclick="downloadAsset('logo-dark','Logo_Dark');return false;">Download</a></div>
+      </div>
+      <div class="asset-card">
+        <div class="asset-preview light-bg">
+          <div class="logo-preview"><div class="lp-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div><span class="lp-name" style="color:#1a1408;font-family:'DM Sans',sans-serif;">Sentinel<span style="color:#f5a623;">Grid</span></span></div>
+        </div>
+        <div class="asset-info"><div class="asset-name">Logo — Light</div><div class="asset-type">PNG / SVG</div><a class="asset-dl" href="#" onclick="downloadAsset('logo-light','Logo_Light');return false;">Download</a></div>
+      </div>
+      <div class="asset-card">
+        <div class="asset-preview amber-bg">
+          <div style="width:48px;height:48px;background:white;border-radius:12px;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" width="28" height="28"><path fill="#f5a623" d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div>
+        </div>
+        <div class="asset-info"><div class="asset-name">App Icon</div><div class="asset-type">PNG 1024×1024</div><a class="asset-dl" href="#" onclick="downloadAsset('app-icon','App_Icon');return false;">Download</a></div>
+      </div>
+      <div class="asset-card">
+        <div class="asset-preview dark-bg" style="font-family:'DM Mono',monospace;font-size:11px;color:#635a42;letter-spacing:1px;">SENTINEL GRID</div>
+        <div class="asset-info"><div class="asset-name">Wordmark</div><div class="asset-type">PNG / SVG</div><a class="asset-dl" href="#" onclick="downloadAsset('wordmark','Wordmark');return false;">Download</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-badge">BRAND COLORS</div>
+    <h2>Color Palette</h2>
+    <div class="color-row">
+      <div class="color-chip"><div class="chip-swatch" style="background:#f5a623;"></div><div class="chip-info"><div class="chip-name">Amber Gold</div><div class="chip-hex">#F5A623</div></div></div>
+      <div class="color-chip"><div class="chip-swatch" style="background:#d4860a;"></div><div class="chip-info"><div class="chip-name">Deep Amber</div><div class="chip-hex">#D4860A</div></div></div>
+      <div class="color-chip"><div class="chip-swatch" style="background:#1a1408;"></div><div class="chip-info"><div class="chip-name">Charcoal Oak</div><div class="chip-hex">#1A1408</div></div></div>
+      <div class="color-chip"><div class="chip-swatch" style="background:#f4f2ee;border-bottom:1px solid #e0d8cc;"></div><div class="chip-info"><div class="chip-name">Parchment</div><div class="chip-hex">#F4F2EE</div></div></div>
+      <div class="color-chip"><div class="chip-swatch" style="background:#2db87a;"></div><div class="chip-info"><div class="chip-name">Signal Green</div><div class="chip-hex">#2DB87A</div></div></div>
+      <div class="color-chip"><div class="chip-swatch" style="background:#e5534b;"></div><div class="chip-info"><div class="chip-name">Alert Red</div><div class="chip-hex">#E5534B</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-badge">PRESS RELEASES</div>
+    <h2>Latest Announcements</h2>
+    <div class="pr-list">
+      <div class="pr-card">
+        <div><div class="pr-date">APRIL 9, 2026</div><div class="pr-title">Sentinel Grid Launches Major Redesign with Dark Mode, GDPR Compliance, and Performance Overhaul</div><div class="pr-desc">New amber design identity replaces the previous green theme. Full dark mode, privacy policy, and security hardening complete.</div></div>
+        <span class="pr-badge">PRODUCT</span>
+      </div>
+      <div class="pr-card">
+        <div><div class="pr-date">JANUARY 15, 2026</div><div class="pr-title">Sentinel Grid Adds Cloud Sync — Portfolios Now Persist Across All Devices</div><div class="pr-desc">Powered by Supabase, users can now trade from phone and pick up where they left off on desktop, seamlessly.</div></div>
+        <span class="pr-badge">PRODUCT</span>
+      </div>
+      <div class="pr-card">
+        <div><div class="pr-date">AUGUST 3, 2025</div><div class="pr-title">Sentinel Grid Expands to 25 NSE Stocks with Real-Time Simulated Pricing</div><div class="pr-desc">The platform now covers all major NSE sectors including Banking, Technology, Energy, Pharma, Infrastructure and FMCG.</div></div>
+        <span class="pr-badge">PRODUCT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-badge">BOILERPLATE</div>
+    <h2>About Sentinel Grid (for press use)</h2>
+    <div class="boilerplate">
+      <p>"Sentinel Grid is a virtual stock trading simulator for the Indian National Stock Exchange (NSE). Built for aspiring investors who want to learn before they risk real capital, Sentinel Grid provides realistic, live-simulated prices for 25+ NSE-listed companies, a full trading interface with market, limit, and stop-loss orders, and a portfolio analytics dashboard — all completely free. Sentinel Grid is available as a web application optimised for mobile and desktop, and is not a regulated financial service. No real money is involved."</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-badge">CONTACT</div>
+    <h2>Press Enquiries</h2>
+    <div class="contact-box">
+      <h3>Get in touch 📰</h3>
+      <p>For interview requests, media partnerships, product demonstrations, or press enquiries, please reach out to our press team. We aim to respond to all media enquiries within 48 hours.</p>
+      <a href="mailto:sentinelgrid.app@gmail.com" class="contact-email">sentinelgrid.app@gmail.com</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a>
+    <a href="press.html">Media & Press</a><a href="support.html">Help & Support</a><a href="privacy.html">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">© 2026 Sentinel Grid. All rights reserved. · Virtual trading simulation — not real financial advice.</div>
+</footer>
+<script>
+function toggleTheme(){
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const t=isDark?'light':'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('sg-theme',t);
+  document.getElementById('theme-btn').textContent=t==='dark'?'☀️':'🌙';
+}
+(()=>{
+  const saved=localStorage.getItem('sg-theme')||'light';
+  document.documentElement.setAttribute('data-theme',saved);
+  document.getElementById('theme-btn').textContent=saved==='dark'?'☀️':'🌙';
+})();
+
+// ── LOGO DOWNLOAD (inline SVG — no file hosting needed) ──
+const ASSETS = {
+  'logo-dark': {
+    filename: 'SentinelGrid_Logo_Dark.svg',
+    content: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+  <rect width="200" height="48" fill="#1a1408" rx="10"/>
+  <rect x="8" y="8" width="32" height="32" rx="9" fill="url(#g1)"/>
+  <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5a623"/><stop offset="100%" stop-color="#d4860a"/></linearGradient></defs>
+  <path d="M14 33l5-10 5 5 5-7 5 12H14z" fill="white"/>
+  <text x="50" y="20" font-family="DM Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#f0ead8">Sentinel</text>
+  <text x="50" y="36" font-family="DM Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#f5a623">Grid</text>
+</svg>`
+  },
+  'logo-light': {
+    filename: 'SentinelGrid_Logo_Light.svg',
+    content: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+  <rect width="200" height="48" fill="#f4f2ee" rx="10"/>
+  <rect x="8" y="8" width="32" height="32" rx="9" fill="url(#g2)"/>
+  <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5a623"/><stop offset="100%" stop-color="#d4860a"/></linearGradient></defs>
+  <path d="M14 33l5-10 5 5 5-7 5 12H14z" fill="white"/>
+  <text x="50" y="20" font-family="DM Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#1a1408">Sentinel</text>
+  <text x="50" y="36" font-family="DM Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#d4860a">Grid</text>
+</svg>`
+  },
+  'app-icon': {
+    filename: 'SentinelGrid_App_Icon.svg',
+    content: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5a623"/><stop offset="100%" stop-color="#d4860a"/></linearGradient></defs>
+  <rect width="100" height="100" rx="22" fill="url(#g3)"/>
+  <path d="M18 76l14-28 14 14 14-20 14 34H18z" fill="white"/>
+</svg>`
+  },
+  'wordmark': {
+    filename: 'SentinelGrid_Wordmark.svg',
+    content: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" width="240" height="40">
+  <rect width="240" height="40" fill="#1a1408" rx="8"/>
+  <text x="12" y="27" font-family="DM Sans,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2" fill="#f0ead8">SENTINEL </text>
+  <text x="140" y="27" font-family="DM Sans,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2" fill="#f5a623">GRID</text>
+</svg>`
+  }
+};
+
+function downloadAsset(id, label) {
+  const asset = ASSETS[id];
+  if (!asset) return;
+  const blob = new Blob([asset.content], {type: 'image/svg+xml'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = asset.filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

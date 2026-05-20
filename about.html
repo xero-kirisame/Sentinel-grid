@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Us — Sentinel Grid</title>
+<meta name="description" content="Learn about Sentinel Grid — India's premier virtual stock trading simulator built for the next generation of investors.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --accent:#f5a623;--accent2:#d4860a;--accent-bg:rgba(245,166,35,.1);
+  --green:#2db87a;--green-bg:rgba(45,184,122,.08);
+  --bg:#f4f2ee;--card:#ffffff;--border:rgba(160,130,60,.16);
+  --text:#1a1408;--text2:#5a4e35;--text3:#9a8e72;
+  --nav-bg:rgba(244,242,238,.92);--shadow:0 4px 24px rgba(120,90,20,.08);
+}
+[data-theme="dark"]{
+  --bg:#0f0e0c;--card:#1e1b14;--border:rgba(160,130,60,.14);
+  --text:#f0ead8;--text2:#b0a07a;--text3:#635a42;
+  --nav-bg:rgba(15,14,12,.94);--shadow:0 4px 24px rgba(0,0,0,.4);
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow);}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.brand-icon{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#f5a623,#d4860a);display:flex;align-items:center;justify-content:center;}
+.brand-icon svg{width:17px;height:17px;fill:white;}
+.brand-name{font-size:16px;font-weight:700;color:var(--text);}
+.brand-name span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:6px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:20px;transition:all .15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--accent-bg);}
+.nav-links a.active{color:var(--accent2);}
+.theme-btn{width:32px;height:32px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .15s;margin-left:4px;}
+.theme-btn:hover{transform:scale(1.1);}
+
+/* HERO */
+.hero{padding:70px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(245,166,35,.14),transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent2);background:var(--accent-bg);border:1px solid rgba(245,166,35,.25);border-radius:20px;padding:4px 14px;margin-bottom:16px;font-family:'DM Mono',monospace;}
+.hero h1{font-size:44px;font-weight:700;color:var(--text);margin-bottom:14px;letter-spacing:-.8px;line-height:1.15;}
+.hero h1 span{color:var(--accent);}
+.hero p{font-size:17px;color:var(--text2);line-height:1.65;max-width:620px;margin:0 auto 28px;}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{padding:13px 28px;border-radius:12px;background:linear-gradient(135deg,#f5a623,#d4860a);color:white;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(245,166,35,.35);transition:all .2s;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(245,166,35,.45);}
+.btn-secondary{padding:13px 28px;border-radius:12px;background:transparent;color:var(--text2);font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--border);transition:all .2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent2);}
+
+/* STATS BAR */
+.stats-bar{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 24px;}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+.stat-num{font-size:32px;font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;margin-bottom:4px;}
+.stat-lbl{font-size:13px;color:var(--text2);}
+
+/* SECTIONS */
+.page-wrap{max-width:900px;margin:0 auto;padding:56px 24px 80px;}
+.section{margin-bottom:64px;}
+.section-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--accent2);background:var(--accent-bg);border-radius:20px;padding:3px 10px;margin-bottom:10px;font-family:'DM Mono',monospace;}
+.section h2{font-size:28px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:-.4px;}
+.section p{font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:12px;}
+
+/* MISSION GRID */
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:24px;}
+.mission-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:var(--shadow);transition:transform .15s;}
+.mission-card:hover{transform:translateY(-3px);}
+.mc-icon{font-size:28px;margin-bottom:10px;}
+.mc-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.mc-desc{font-size:13px;color:var(--text2);line-height:1.55;}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;margin-top:24px;}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 18px;text-align:center;box-shadow:var(--shadow);}
+.team-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 12px;}
+.team-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.team-role{font-size:12px;color:var(--text3);font-family:'DM Mono',monospace;}
+
+/* TIMELINE */
+.timeline{margin-top:22px;position:relative;padding-left:28px;}
+.timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:24px;}
+.tl-dot{position:absolute;left:-24px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);}
+.tl-year{font-size:10px;font-weight:700;color:var(--accent2);font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:3px;}
+.tl-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.tl-desc{font-size:13px;color:var(--text2);line-height:1.5;}
+
+/* FOOTER */
+footer{background:var(--card);border-top:1px solid var(--border);padding:28px 24px;text-align:center;}
+.footer-links{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.footer-links a{font-size:12px;color:var(--text2);text-decoration:none;padding:4px 10px;border-radius:20px;transition:all .15s;}
+.footer-links a:hover{color:var(--accent2);background:var(--accent-bg);}
+.footer-copy{font-size:11px;color:var(--text3);}
+
+@media(max-width:640px){.hero h1{font-size:30px;}.stats-inner{grid-template-columns:repeat(2,1fr);}.nav-links a:not(.btn){display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="brand-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div>
+    <div class="brand-name">Sentinel<span>Grid</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="about.html" class="active">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="press.html">Press</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">OUR STORY</div>
+  <h1>Built for the next generation<br>of <span>Indian investors</span></h1>
+  <p>Sentinel Grid was created with a simple belief: everyone deserves the chance to learn investing without the risk of losing real money. We built the most realistic NSE trading simulator on the web.</p>
+  <div class="cta-row">
+    <a href="index.html" class="btn-primary">Start Trading Free →</a>
+    <a href="support.html" class="btn-secondary">Learn More</a>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="stat-num">25+</div><div class="stat-lbl">NSE Stocks Simulated</div></div>
+    <div><div class="stat-num">₹10L</div><div class="stat-lbl">Virtual Cash Per User</div></div>
+    <div><div class="stat-num">6</div><div class="stat-lbl">Live Market Indices</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-lbl">Free, Always</div></div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="section">
+    <div class="section-badge">MISSION</div>
+    <h2>Why we built Sentinel Grid</h2>
+    <p>Most Indians learn about the stock market by losing money on their first trade. We think that's backwards. Sentinel Grid gives you a fully realistic trading environment — live-simulated NSE prices, real order types, a P&L tracker, and a portfolio dashboard — with absolutely zero financial risk.</p>
+    <p>Whether you're a college student curious about equities, a professional looking to sharpen your strategy, or an experienced trader testing new approaches, Sentinel Grid is your proving ground.</p>
+    <div class="mission-grid">
+      <div class="mission-card"><div class="mc-icon">🎯</div><div class="mc-title">Risk-Free Learning</div><div class="mc-desc">Practice with ₹10,00,000 in virtual cash. Make mistakes, learn fast, lose nothing real.</div></div>
+      <div class="mission-card"><div class="mc-icon">📊</div><div class="mc-title">Realistic Simulation</div><div class="mc-desc">Live-simulated prices with real tick data, spread, and volatility for 25+ NSE stocks.</div></div>
+      <div class="mission-card"><div class="mc-icon">📱</div><div class="mc-title">Mobile-First</div><div class="mc-desc">Designed from the ground up for mobile. Trade anywhere, anytime, from any device.</div></div>
+      <div class="mission-card"><div class="mc-icon">🔒</div><div class="mc-title">Private & Secure</div><div class="mc-desc">Your data is yours. We use industry-standard encryption and never sell your information.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-badge">JOURNEY</div>
+    <h2>Our milestones</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><div class="tl-title">Idea & Prototype</div><div class="tl-desc">Sentinel Grid began as a weekend project — a simple dashboard showing live NSE index prices.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025 Q1</div><div class="tl-title">Full Trading Engine</div><div class="tl-desc">Launched order placement, portfolio tracking, and real P&L calculation for 25 stocks.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025 Q3</div><div class="tl-title">User Accounts & Cloud Sync</div><div class="tl-desc">Added Supabase-powered authentication so portfolios persist across devices.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-title">Design Overhaul & GDPR Compliance</div><div class="tl-desc">Rebuilt the UI with a new design identity, added dark mode, security hardening, and full privacy compliance.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-badge">TEAM</div>
+    <h2>The people behind the platform</h2>
+    <p>We're a small, passionate team of developers and finance enthusiasts who believe in learning by doing.</p>
+    <div class="team-grid">
+      <div class="team-card"><div class="team-avatar">🧑‍💻</div><div class="team-name">Founder</div><div class="team-role">Design & Engineering</div></div>
+      <div class="team-card"><div class="team-avatar">📈</div><div class="team-name">Markets Advisor</div><div class="team-role">Product Strategy</div></div>
+      <div class="team-card"><div class="team-avatar">🛡️</div><div class="team-name">Security Lead</div><div class="team-role">Infrastructure & Compliance</div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="press.html">Media & Press</a>
+    <a href="support.html">Help & Support</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">© 2026 Sentinel Grid. All rights reserved. · Virtual trading simulation — not real financial advice.</div>
+</footer>
+
+<script>
+function toggleTheme(){const isDark=document.documentElement.getAttribute('data-theme')==='dark';const t=isDark?'light':'dark';document.documentElement.setAttribute('data-theme',t);localStorage.setItem('sg-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'☀️':'🌙';}
+(()=>{const saved=localStorage.getItem('sg-theme')||'light';document.documentElement.setAttribute('data-theme',saved);document.getElementById('theme-btn').textContent=saved==='dark'?'☀️':'🌙';})();
+</script>
+</body>
+</html>

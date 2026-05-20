@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Help & Support — Sentinel Grid</title>
+<meta name="description" content="Get help with Sentinel Grid — FAQs, trading guides, account support, and contact information.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--accent:#f5a623;--accent2:#d4860a;--accent-bg:rgba(245,166,35,.1);--green:#2db87a;--green-bg:rgba(45,184,122,.08);--bg:#f4f2ee;--card:#ffffff;--border:rgba(160,130,60,.16);--text:#1a1408;--text2:#5a4e35;--text3:#9a8e72;--nav-bg:rgba(244,242,238,.92);--shadow:0 4px 24px rgba(120,90,20,.08);}
+[data-theme="dark"]{--bg:#0f0e0c;--card:#1e1b14;--border:rgba(160,130,60,.14);--text:#f0ead8;--text2:#b0a07a;--text3:#635a42;--nav-bg:rgba(15,14,12,.94);--shadow:0 4px 24px rgba(0,0,0,.4);}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;}
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.brand-icon{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#f5a623,#d4860a);display:flex;align-items:center;justify-content:center;}
+.brand-icon svg{width:17px;height:17px;fill:white;}
+.brand-name{font-size:16px;font-weight:700;color:var(--text);}.brand-name span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:6px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:20px;transition:all .15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent2);background:var(--accent-bg);}
+.theme-btn{width:32px;height:32px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .15s;margin-left:4px;}
+
+.hero{padding:56px 24px 44px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(245,166,35,.12),transparent 65%);}
+.hero-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent2);background:var(--accent-bg);border:1px solid rgba(245,166,35,.25);border-radius:20px;padding:4px 14px;margin-bottom:14px;font-family:'DM Mono',monospace;}
+.hero h1{font-size:38px;font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:-.5px;}
+.hero p{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto 24px;line-height:1.6;}
+
+/* SEARCH */
+.search-wrap{max-width:460px;margin:0 auto;position:relative;}
+.search-inp{width:100%;padding:14px 18px 14px 48px;border-radius:14px;border:1.5px solid var(--border);background:var(--card);font-size:15px;color:var(--text);outline:none;transition:all .2s;font-family:'DM Sans',sans-serif;box-shadow:var(--shadow);}
+.search-inp:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,166,35,.1);}
+.search-ico{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;}
+
+.page-wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;}
+
+/* QUICK LINKS */
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:44px;}
+.quick-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;cursor:pointer;transition:all .15s;box-shadow:var(--shadow);text-decoration:none;}
+.quick-card:hover{transform:translateY(-2px);border-color:var(--accent);}
+.qc-icon{font-size:28px;margin-bottom:9px;}
+.qc-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.qc-desc{font-size:11px;color:var(--text3);}
+
+/* FAQ */
+.section-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--accent2);background:var(--accent-bg);border-radius:20px;padding:3px 10px;margin-bottom:10px;font-family:'DM Mono',monospace;}
+.section-title{font-size:24px;font-weight:700;color:var(--text);margin-bottom:18px;letter-spacing:-.3px;}
+.faq-group{margin-bottom:36px;}
+.faq-group-title{font-size:13px;font-weight:700;color:var(--text3);letter-spacing:1px;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden;box-shadow:var(--shadow);}
+.faq-q{padding:16px 18px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none;}
+.faq-q:hover{background:var(--accent-bg);}
+.faq-arrow{font-size:12px;color:var(--text3);transition:transform .2s;flex-shrink:0;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{display:none;padding:0 18px 16px;font-size:13px;color:var(--text2);line-height:1.7;border-top:1px solid var(--border);}
+.faq-item.open .faq-a{display:block;}
+.faq-a a{color:var(--accent2);font-weight:600;text-decoration:none;}
+.faq-a a:hover{text-decoration:underline;}
+.faq-a ul{padding-left:18px;margin:6px 0;}
+.faq-a ul li{margin-bottom:3px;}
+
+/* CONTACT CARDS */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:18px;}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:var(--shadow);}
+.cc-icon{font-size:26px;margin-bottom:10px;}
+.cc-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.cc-desc{font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.5;}
+.cc-link{display:inline-block;font-size:13px;font-weight:600;color:var(--accent2);text-decoration:none;padding:8px 16px;border-radius:20px;background:var(--accent-bg);border:1px solid rgba(245,166,35,.2);transition:all .15s;}
+.cc-link:hover{border-color:var(--accent);}
+
+/* STATUS */
+.status-bar{background:var(--green-bg);border:1px solid rgba(45,184,122,.2);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px;margin-bottom:36px;}
+.status-dot{width:10px;height:10px;border-radius:50%;background:#2db87a;flex-shrink:0;box-shadow:0 0 0 3px rgba(45,184,122,.2);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(45,184,122,.2);}50%{box-shadow:0 0 0 6px rgba(45,184,122,.08);}}
+.status-text{font-size:13px;font-weight:600;color:#1e9e63;}
+.status-sub{font-size:12px;color:var(--text3);margin-left:auto;font-family:'DM Mono',monospace;}
+
+footer{background:var(--card);border-top:1px solid var(--border);padding:28px 24px;text-align:center;}
+.footer-links{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.footer-links a{font-size:12px;color:var(--text2);text-decoration:none;padding:4px 10px;border-radius:20px;transition:all .15s;}
+.footer-links a:hover{color:var(--accent2);background:var(--accent-bg);}
+.footer-copy{font-size:11px;color:var(--text3);}
+
+@media(max-width:640px){.hero h1{font-size:26px;}.nav-links a:not(.theme-btn){display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="brand-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div>
+    <div class="brand-name">Sentinel<span>Grid</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a><a href="blog.html">Blog</a>
+    <a href="press.html">Press</a><a href="support.html" class="active">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">HELP & SUPPORT</div>
+  <h1>How can we help?</h1>
+  <p>Find answers to common questions or reach out to the team directly.</p>
+  <div class="search-wrap">
+    <span class="search-ico">🔍</span>
+    <input class="search-inp" type="text" placeholder="Search for help — e.g. 'how to place an order'..." oninput="filterFAQ(this.value)">
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="status-bar">
+    <div class="status-dot"></div>
+    <div class="status-text">All systems operational</div>
+    <div class="status-sub">Updated Apr 9, 2026</div>
+  </div>
+
+  <div class="quick-grid">
+    <a class="quick-card" href="#getting-started"><div class="qc-icon">🚀</div><div class="qc-title">Getting Started</div><div class="qc-desc">New to Sentinel Grid?</div></a>
+    <a class="quick-card" href="#trading"><div class="qc-icon">📈</div><div class="qc-title">Trading & Orders</div><div class="qc-desc">How orders work</div></a>
+    <a class="quick-card" href="#account"><div class="qc-icon">👤</div><div class="qc-title">Account & Profile</div><div class="qc-desc">Login, password, data</div></a>
+    <a class="quick-card" href="#privacy-faq"><div class="qc-icon">🔒</div><div class="qc-title">Privacy & Security</div><div class="qc-desc">Your data, your rights</div></a>
+    <a class="quick-card" href="#contact-section"><div class="qc-icon">💬</div><div class="qc-title">Contact Us</div><div class="qc-desc">Reach the team</div></a>
+  </div>
+
+  <div class="section-badge">FAQ</div>
+  <div class="section-title">Frequently Asked Questions</div>
+
+  <div id="faq-container">
+    <div class="faq-group" id="getting-started">
+      <div class="faq-group-title">Getting Started</div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">What is Sentinel Grid? <span class="faq-arrow">▾</span></div><div class="faq-a">Sentinel Grid is a <strong>virtual stock trading simulator</strong> for Indian markets. You get ₹10,00,000 in simulated cash to trade 25+ NSE-listed stocks with live-simulated prices — with zero real money involved. It's the safest way to learn investing before you risk actual capital.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Is Sentinel Grid free? <span class="faq-arrow">▾</span></div><div class="faq-a">Yes, 100% free — now and always. There are no premium tiers, no in-app purchases, and no subscription fees. We believe access to financial education should be universal.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">How do I create an account? <span class="faq-arrow">▾</span></div><div class="faq-a">Visit <a href="index.html">the homepage</a> and sign up with Google (fastest) or with your email and password. Fill in your details and you'll be taken straight into the app — no email verification needed.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Are the prices real? <span class="faq-arrow">▾</span></div><div class="faq-a">Prices are <strong>live-simulated</strong> — they start from real NSE base prices and then simulate realistic tick-by-tick movement using a random walk model. They are not a live feed of actual exchange prices, so Sentinel Grid should not be used for real trading decisions.</div></div>
+    </div>
+
+    <div class="faq-group" id="trading">
+      <div class="faq-group-title">Trading & Orders</div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">What order types are supported? <span class="faq-arrow">▾</span></div><div class="faq-a">Sentinel Grid supports three order types:<ul><li><strong>Market Order</strong> — executes immediately at the current simulated price.</li><li><strong>Limit Order</strong> — you set a price; the order simulates at that price.</li><li><strong>Stop-Loss (SL)</strong> — triggers a sell at a price you set to limit downside.</li></ul></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">How is P&L calculated? <span class="faq-arrow">▾</span></div><div class="faq-a"><strong>Unrealised P&L</strong> is calculated as: (Current Price − Average Cost) × Shares Held. <strong>Realised P&L</strong> is locked in when you sell, calculated as: (Sell Price − Average Buy Cost) × Shares Sold. Both are shown in your dashboard.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Can I short sell? <span class="faq-arrow">▾</span></div><div class="faq-a">Not currently. Sentinel Grid supports long positions only — you must own shares before selling them. Short selling and derivatives (F&O) are on the roadmap for a future update.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Why can't I place an order? <span class="faq-arrow">▾</span></div><div class="faq-a">The most common reasons are:<ul><li><strong>Buying:</strong> Insufficient virtual cash for the order total.</li><li><strong>Selling:</strong> You don't hold that stock, or you're trying to sell more shares than you own.</li><li><strong>Quantity:</strong> The quantity field is empty or set to zero.</li></ul>Check the order summary panel for the estimated amount before placing.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">How do I reset my portfolio? <span class="faq-arrow">▾</span></div><div class="faq-a">Portfolio resets are not currently available in-app. If you'd like to start fresh, please email us at <a href="mailto:sentinelgrid.app@gmail.com">sentinelgrid.app@gmail.com</a> with your account email and we'll reset your balance and positions manually.</div></div>
+    </div>
+
+    <div class="faq-group" id="account">
+      <div class="faq-group-title">Account & Profile</div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">How do I reset my password? <span class="faq-arrow">▾</span></div><div class="faq-a">On the login page, click <strong>"Forgot password?"</strong> and enter your email. We'll send a reset link within a few minutes. Check your spam folder if you don't see it.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Does my portfolio save across devices? <span class="faq-arrow">▾</span></div><div class="faq-a">Yes. Your portfolio, orders, watchlist, and cash balance are stored securely in the cloud via Supabase. Sign in on any device and your account is exactly as you left it.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">How do I delete my account? <span class="faq-arrow">▾</span></div><div class="faq-a">Email us at <a href="mailto:sentinelgrid.app@gmail.com">sentinelgrid.app@gmail.com</a> with the subject line "Account Deletion Request" and your registered email. Under GDPR, we will process your request within 30 days and permanently delete all your data.</div></div>
+    </div>
+
+    <div class="faq-group" id="privacy-faq">
+      <div class="faq-group-title">Privacy & Security</div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">What data does Sentinel Grid collect? <span class="faq-arrow">▾</span></div><div class="faq-a">We collect only what's needed to run your account: your name, email, and trading activity (simulated only). We never collect payment information, bank details, or sell your data. See our full <a href="privacy.html">Privacy Policy</a>.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">Is my data GDPR-compliant? <span class="faq-arrow">▾</span></div><div class="faq-a">Yes. Sentinel Grid is fully GDPR-compliant. You have the right to access, rectify, export, or delete your data at any time. Our privacy policy outlines all your rights. Email <a href="mailto:sentinelgrid.app@gmail.com">sentinelgrid.app@gmail.com</a> to exercise them.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggle(this)">How is my password stored? <span class="faq-arrow">▾</span></div><div class="faq-a">Passwords are never stored in plain text. We use Supabase Auth which hashes passwords with bcrypt — the industry-standard algorithm. We never have access to your original password.</div></div>
+    </div>
+  </div>
+
+  <div id="contact-section" style="margin-top:44px;">
+    <div class="section-badge">CONTACT</div>
+    <div class="section-title">Still need help?</div>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="cc-icon">💬</div><div class="cc-title">General Support</div><div class="cc-desc">Questions about the app, your account, or trading features.</div><a href="mailto:sentinelgrid.app@gmail.com" class="cc-link">sentinelgrid.app@gmail.com</a></div>
+      <div class="contact-card"><div class="cc-icon">🔒</div><div class="cc-title">Privacy & Data</div><div class="cc-desc">Data requests, GDPR rights, account deletion, and privacy questions.</div><a href="mailto:sentinelgrid.app@gmail.com" class="cc-link">sentinelgrid.app@gmail.com</a></div>
+      <div class="contact-card"><div class="cc-icon">🛡️</div><div class="cc-title">Security</div><div class="cc-desc">Found a vulnerability? Please disclose responsibly to our security team.</div><a href="mailto:sentinelgrid.app@gmail.com" class="cc-link">sentinelgrid.app@gmail.com</a></div>
+      <div class="contact-card"><div class="cc-icon">📰</div><div class="cc-title">Press & Media</div><div class="cc-desc">Interview requests, partnerships, and media enquiries.</div><a href="mailto:sentinelgrid.app@gmail.com" class="cc-link">sentinelgrid.app@gmail.com</a></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a>
+    <a href="press.html">Media & Press</a><a href="support.html">Help & Support</a><a href="privacy.html">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">© 2026 Sentinel Grid. All rights reserved. · Virtual trading simulation — not real financial advice.</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const t=isDark?'light':'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('sg-theme',t);
+  document.getElementById('theme-btn').textContent=t==='dark'?'☀️':'🌙';
+}
+(()=>{
+  const saved=localStorage.getItem('sg-theme')||'light';
+  document.documentElement.setAttribute('data-theme',saved);
+  document.getElementById('theme-btn').textContent=saved==='dark'?'☀️':'🌙';
+})();
+
+function toggle(el){el.closest('.faq-item').classList.toggle('open');}
+
+function filterFAQ(q){
+  const term=q.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const text=item.textContent.toLowerCase();
+    item.style.display=(!term||text.includes(term))?'':'none';
+  });
+  document.querySelectorAll('.faq-group').forEach(group=>{
+    const visible=[...group.querySelectorAll('.faq-item')].some(i=>i.style.display!=='none');
+    group.style.display=visible?'':'none';
+  });
+}
+</script>
+</body>
+</html>
